@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork13</title>
+</head>
+<body>
+    <script>
+        function findPallindrom(number) {
+            const result = {
+               steps: 0,
+               number: number,
+            }
+            const getPallindrom = () => {
+                if (isPallindrom(number)) {
+                   return result
+                } else {
+                 number += Number(String(number).split('').reverse().join(''))
+                 result.steps++
+                 getPallindrom();
+                }
+            }
+            getPallindrom();
+
+            return result;
+        }
+
+        function isPallindrom(number) {
+            return String(number) === String(number).split('').reverse().join('');
+        }
+
+        console.log(findPallindrom(96));
+    </script>
+</body>
+</html>
